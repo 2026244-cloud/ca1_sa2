@@ -1,0 +1,81 @@
+{
+  "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+  "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+  "source_bytes": 49961641,
+  "python": "3.12.15",
+  "spark": "3.5.3",
+  "sklearn": "1.8.0",
+  "spark_master": "local[2]",
+  "driver_memory": "2g",
+  "local_worker_threads": 2,
+  "seed": 42,
+  "raw_rows": 2964624,
+  "raw_columns": 19,
+  "cleaning": [
+    {
+      "rule": "january_pickups",
+      "remaining": 2964606
+    },
+    {
+      "rule": "duration_1_to_120",
+      "remaining": 2926743
+    },
+    {
+      "rule": "known_zones",
+      "remaining": 2898428
+    }
+  ],
+  "clean_rows": 2898428,
+  "duration_summary": {
+    "mean": 14.886012101502418,
+    "median": 11.716666666666667,
+    "sd": 11.524725515203272
+  },
+  "splits": {
+    "train": {
+      "days": [
+        1,
+        20
+      ],
+      "eligible": 1839253,
+      "sample": 60000
+    },
+    "validation": {
+      "days": [
+        21,
+        25
+      ],
+      "eligible": 474706,
+      "sample": 15000
+    },
+    "test": {
+      "days": [
+        26,
+        31
+      ],
+      "eligible": 584469,
+      "sample": 20000
+    }
+  },
+  "storage_bytes": {
+    "csv": 84721720,
+    "parquet": 10873956
+  },
+  "query_times_seconds": {
+    "csv": [
+      0.5573687920114025,
+      0.5769319579994772,
+      0.5600251659925561
+    ],
+    "parquet": [
+      0.14238654199289158,
+      0.11490920800133608,
+      0.09200379200046882
+    ]
+  },
+  "query_result_rows": {
+    "csv": 238,
+    "parquet": 238
+  },
+  "query_equivalent": true
+}
